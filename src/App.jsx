@@ -67,6 +67,10 @@ const App = () => {
       >
         Start New Game
       </button>
+      <h1>
+        Current <span className="greentext">Game</span>{' '}
+        <span className="orangetext">History</span>
+      </h1>
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
       <div className="bg-balls" />
     </div>
