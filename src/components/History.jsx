@@ -2,17 +2,25 @@ import React from 'react';
 
 const History = ({ history, moveTo, currentMove }) => {
   return (
-    <ul>
-      {history.map((_, move) => {
-        return (
-          <li key={move}>
-                <button type="button" style={{ fontWeight: move === currentMove ? 'bold':'normal'}} onClick={() => { moveTo(move); }}>
-              {move === 0 ? 'Start Game' : `Go to move #${move}`}
-            </button>
-          </li>
-        );
-      })}
-    </ul>
+    <div className="history-wrapper">
+      <ul className="history">
+        {history.map((_, move) => {
+          return (
+            <li key={move}>
+              <button
+                type="button"
+                className={`btn-move ${move === currentMove ? 'active' : ''}`}
+                onClick={() => {
+                  moveTo(move);
+                }}
+              >
+                {move === 0 ? 'Start Game' : `Go to move #${move}`}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 
