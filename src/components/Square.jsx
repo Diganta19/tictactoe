@@ -6,7 +6,7 @@ const Square = ({ val, onClick, isWinningSquare }) => {
     <button
       type="button"
       onClick={onClick}
-      className={`square ${isWinningSquare ? 'winning' : ''}`}
+      className={`square ${isWinningSquare ? 'winning' : ''}`} // DYNAMIC CLASS
     >
       {val}
     </button>

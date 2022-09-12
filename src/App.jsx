@@ -7,12 +7,18 @@ import { calculateWinner } from './components/helpers';
 import './styles/root.scss';
 
 const App = () => {
+  
+ 
   const [history, setHistory] = useState([
     { board: Array(9).fill(null), isXnext: true },
   ]);
+  
+ 
   const [currentMove, setCurrentMove] = useState(0);
 
+
   const current = history[currentMove];
+  
   const { winner, winningSquare } = calculateWinner(current.board);
 
   const handelOnClick = position => {
